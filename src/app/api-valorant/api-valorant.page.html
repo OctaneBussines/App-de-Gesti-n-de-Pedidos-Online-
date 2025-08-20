@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  
+</ion-header>
+
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-button (click)="navigateToHome()">
+      <ion-icon slot="icon-only" name="home"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <ion-buttons slot="end">
+    <ion-button (click)="navigateToUsuario()">
+      <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <ion-title style="text-align: center;">Agentes de Valorant</ion-title>
+</ion-toolbar>
+
+<ion-content [fullscreen]="true">
+
+  <div class="titulo">
+    <h1>Conoce a todos los Agentes del juego del momento, Valorant.</h1>
+  </div>
+  <ion-list>
+    <ion-card class="containerCard" *ngFor="let item of agentData">
+      <img [src]="item.fullPortrait" alt="Icono {{ item.displayName }}">
+      <ion-card-header>
+        <ion-card-title>{{ item.displayName }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p><strong>{{ item.description }}</strong></p>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+</ion-content>
